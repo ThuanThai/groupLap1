@@ -3,7 +3,7 @@
 #include <unordered_map>
 #define LOW 0
 
-int findMedian(vector<int> arr, int length) {
+int findMedian(int arr[], int length) {
 	if (length % 2 != 0) {
 		return arr[length / 2];
 	}
@@ -12,11 +12,11 @@ int findMedian(vector<int> arr, int length) {
 	}
 }
 
-int findMode(vector<int> arr) {
+int findMode(int arr[], int length) {
 	unordered_map<int, int> umap;
 
-	for (int x : arr) {
-		umap[x]++;
+	for (int i = 0; i < length; i++) {
+		umap[arr[i]]++;
 	}
 
 	int max = 0;
@@ -30,7 +30,7 @@ int findMode(vector<int> arr) {
 	return face;
 }
 
-void Menu(vector<int>& col1, vector<int>& col2) {
+void Menu(int col1[], int col2[], int length) {
 	bool flag = true;
 	int choice;
 	
@@ -44,8 +44,8 @@ void Menu(vector<int>& col1, vector<int>& col2) {
 		case 1:
 		{
 	
-			int medX = findMedian(col1, col1.size());
-			int medY = findMedian(col2, col2.size());
+			int medX = findMedian(col1, length);
+			int medY = findMedian(col2, length);
 
 			cout << "Median_X: " << medX << endl;
 			cout << "Median_Y: " << medY << endl;
@@ -55,8 +55,8 @@ void Menu(vector<int>& col1, vector<int>& col2) {
 
 		case 2:
 		{
-			int x = findMode(col1);
-			int y = findMode(col2);
+			int x = findMode(col1, length);
+			int y = findMode(col2, length);
 			
 			cout << "Mode_X: " << x << endl;
 			cout << "Mode_Y: " << y << endl;

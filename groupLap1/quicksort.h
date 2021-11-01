@@ -7,7 +7,7 @@ void swap(int& a, int& b) {
 	b = temp;
 }
 
-int partition(vector<int>& arr, int low, int high) {
+int partition(int arr[], int low, int high) {
 	int pivot = arr[high];
 	int right = high - 1;
 	int left = low;
@@ -23,7 +23,7 @@ int partition(vector<int>& arr, int low, int high) {
 	return left;
 }
 
-void quickSort(vector<int>& arr, int low, int high) {
+void quickSort(int arr[], int low, int high) {
 	if (low < high) {
 		int n = partition(arr, low, high);
 		quickSort(arr, n + 1, high);
